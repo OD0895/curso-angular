@@ -1,0 +1,8 @@
+<!---aqui tiene un eventemmiter para ver Outputs-->
+<div class="product-grid">
+  <app-product
+    *ngFor="let product of products"
+    (productClick)="clickProduct($event)"
+    [product]="product">
+  </app-product>
+</div>
