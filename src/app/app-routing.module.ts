@@ -8,32 +8,39 @@ import { CartComponent } from './cart/cart.component';
 import { DemoComponent } from './demo/demo.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
+import { LayoutComponent } from './layout/layout.component';
 
 const routes: Routes = [
   {
     path: '',
-    redirectTo: '/home',
-    pathMatch: 'full'
-  },
-  {
-    path: 'home',
-    component: HomeComponent
-  },
-  {
-    path: 'cart',
-    component: CartComponent
-  },
-  {
-    path: 'products',
-    component: ProductsComponent
-  },
-  {
-    path: 'products/:id',
-    component: ProductDetailComponent
-  },
-  {
-    path: 'contact',
-    component: ContactComponent
+    component: LayoutComponent,
+    children: [
+      {
+        path: '',
+        redirectTo: '/home',
+        pathMatch: 'full',
+      },
+      {
+        path: 'home',
+        component: HomeComponent
+      },
+      {
+        path: 'cart',
+        component: CartComponent
+      },
+      {
+        path: 'products',
+        component: ProductsComponent
+      },
+      {
+        path: 'products/:id',
+        component: ProductDetailComponent
+      },
+      {
+        path: 'contact',
+        component: ContactComponent
+      },
+    ]
   },
   {
     path: 'demo',
