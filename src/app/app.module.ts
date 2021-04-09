@@ -13,6 +13,7 @@ import { LayoutComponent } from './layout/layout.component';
 
 import { SharedModule } from './shared/shared.module';
 import { CoreModule } from './core/core.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,7 +28,8 @@ import { CoreModule } from './core/core.module';
     FormsModule,
     SharedModule,
     CoreModule,
-    SwiperModule
+    SwiperModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
