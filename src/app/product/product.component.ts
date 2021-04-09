@@ -3,7 +3,6 @@ import {
   Input,
   Output,
   EventEmitter,
-  OnChanges,
   SimpleChanges 
 } from '@angular/core';
 import { Product } from '../product.model';
