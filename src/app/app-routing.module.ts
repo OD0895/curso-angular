@@ -1,13 +1,12 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
-import { ProductsComponent } from './products/products.component';
-import { ContactComponent } from './contact/contact.component';
-import { CartComponent } from './cart/cart.component';
 import { DemoComponent } from './demo/demo.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import { ProductDetailComponent } from './product-detail/product-detail.component';
+import { ProductDetailComponent } from './products/components/product-detail/product-detail.component';
 import { LayoutComponent } from './layout/layout.component';
+
+import { AdminGuard } from './admin.guard';
 
 const routes: Routes = [
   {
@@ -25,19 +24,16 @@ const routes: Routes = [
       },
       {
         path: 'cart',
-        component: CartComponent
+        loadChildren: () => import('./cart/cart.module').then(m => m.CartModule)
       },
       {
         path: 'products',
-        component: ProductsComponent
-      },
-      {
-        path: 'products/:id',
-        component: ProductDetailComponent
+        loadChildren: () => import('./products/products.module').then(m => m.ProductsModule)
       },
       {
         path: 'contact',
-        component: ContactComponent
+        canActivate: [AdminGuard],
+        loadChildren: () => import('./contact/contact.module').then(m => m.ContactModule)
       },
     ]
   },
