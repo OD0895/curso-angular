@@ -6,6 +6,7 @@ import { ExponentialPipe } from './pipes/exponential/exponential.pipe';
 import { HighlightDirective } from './directives/highlight/highlight.directive';
 import { RouterModule } from '@angular/router';
 
+import { MaterialModule } from './../material/material.module';
 @NgModule({
   declarations: [
     HeaderComponent,
@@ -21,7 +22,8 @@ import { RouterModule } from '@angular/router';
   ],
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule,
+    MaterialModule
   ]
 })
 export class SharedModule { }
